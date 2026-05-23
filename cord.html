@@ -8,13 +8,17 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html, body {
+    html {
       width: 100%;
       overflow-x: hidden;
+      height: -webkit-fill-available;
     }
 
     body {
+      width: 100%;
+      overflow-x: hidden;
       min-height: 100vh;
+      min-height: -webkit-fill-available;
       background: linear-gradient(170deg, #070f18 0%, #0f1925 35%, #160f24 70%, #080510 100%);
       background-attachment: fixed;
       font-family: 'Cormorant Garamond', Georgia, serif;
@@ -93,7 +97,7 @@
       body {
         display: block;
         padding: 24px 16px;
-        min-height: 100%;
+        min-height: unset;
         height: auto;
         background-attachment: scroll;
       }
