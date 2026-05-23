@@ -15,7 +15,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px 15px;
+      padding: 40px 20px;
       overflow-x: hidden;
     }
 
@@ -40,6 +40,7 @@
     .illustration svg {
       width: 100%;
       height: 100%;
+      display: block;
       filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5));
     }
 
@@ -85,27 +86,31 @@
 
     @media (max-width: 768px) {
       body {
-        padding: 15px 10px;
+        padding: 20px 12px;
         align-items: flex-start;
       }
 
       .container {
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
+        width: 100%;
+        max-width: 100%;
       }
 
       .illustration {
-        flex: 0 0 auto;
+        flex: unset;
         width: 100%;
-        max-width: 290px;
+        max-width: 280px;
         height: auto;
         aspect-ratio: 320 / 480;
         margin: 0 auto;
       }
 
       .card {
-        padding: 30px 22px;
+        width: 100%;
+        padding: 30px 20px;
         border-radius: 20px;
+        flex: unset;
       }
 
       .card h1 {
@@ -298,7 +303,7 @@
     <h1>Cordélia</h1>
     <div class="stanza">
       <p>Dans le silence qui précède les grandes décisions,<br>
-      Don prénom se lève en moi comme l'aube sur les cimes,<br>
+      Ton prénom se lève en moi comme l'aube sur les cimes,<br>
       comme si quelque chose en moi avait trouvé sa floraison<br>
       et t'avait choisie, toi, pour garder mes abîmes.</p>
     </div>
