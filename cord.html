@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Cordélia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      min-height: 100vh;
+      background: linear-gradient(170deg, #070f18 0%, #0f1925 35%, #160f24 70%, #080510 100%);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 15px;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1040px;
+      width: 100%;
+    }
+
+    .illustration {
+      flex: 0 0 340px;
+      width: 340px;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .illustration svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5));
+    }
+
+    .card {
+      flex: 1 1 400px;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 180, 200, 0.12);
+      padding: 45px 40px;
+      color: #f2edf7;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      color: #fbc2cd;
+      margin-bottom: 35px;
+      text-align: center;
+      text-shadow: 0 0 15px rgba(251, 194, 205, 0.2);
+    }
+
+    .stanza { 
+      margin-bottom: 30px; 
+    }
+    
+    .stanza:last-child {
+      margin-bottom: 0;
+    }
+
+    .stanza p {
+      font-size: 1.22rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.95;
+      color: #e5daf0;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 15px 10px;
+        align-items: flex-start;
+      }
+
+      .container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .illustration {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 290px;
+        height: auto;
+        aspect-ratio: 320 / 480;
+        margin: 0 auto;
+      }
+
+      .card {
+        padding: 30px 22px;
+        border-radius: 20px;
+      }
+
+      .card h1 {
+        font-size: 1.55rem;
+        letter-spacing: 0.2em;
+        margin-bottom: 25px;
+      }
+
+      .stanza {
+        margin-bottom: 22px;
+      }
+
+      .stanza p {
+        font-size: 1.12rem;
+        line-height: 1.8;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="illustration">
+  <svg viewBox="0 0 320 480" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#fffdf2" stop-opacity="1"/>
+        <stop offset="25%" stop-color="#fff6d5" stop-opacity="0.6"/>
+        <stop offset="60%" stop-color="#ffdfa0" stop-opacity="0.15"/>
+        <stop offset="100%" stop-color="#ffd280" stop-opacity="0"/>
+      </radialGradient>
+      
+      <linearGradient id="trunkBark" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#140a08"/>
+        <stop offset="35%" stop-color="#2d1712"/>
+        <stop offset="70%" stop-color="#42241b"/>
+        <stop offset="100%" stop-color="#1a0d0a"/>
+      </linearGradient>
+
+      <linearGradient id="sakuraGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" stop-color="#da447d"/>
+        <stop offset="40%" stop-color="#f79cb9"/>
+        <stop offset="90%" stop-color="#fff0f3"/>
+        <stop offset="100%" stop-color="#ffffff"/>
+      </linearGradient>
+
+      <path id="real-petal" d="M 0,0 C -3.5,-6.5 -7.5,-9.5 -5,-15 C -3.8,-17.5 -1.2,-16 0,-13.5 C 1.2,-16 3.8,-17.5 5,-15 C 7.5,-9.5 3.5,-6.5 0,0" fill="url(#sakuraGrad)"/>
+
+      <g id="sakura-full">
+        <use href="#real-petal" transform="rotate(0)"/>
+        <use href="#real-petal" transform="rotate(72)"/>
+        <use href="#real-petal" transform="rotate(144)"/>
+        <use href="#real-petal" transform="rotate(216)"/>
+        <use href="#real-petal" transform="rotate(288)"/>
+        <circle cx="0" cy="0" r="2" fill="#a61c4c"/>
+        <path d="M0,0 L-1,-3.5 M0,0 L1.5,-3 M0,0 L3,1.5 M0,0 L-1.5,3 M0,0 L-3,-1 M0,0 L1,3 M0,0 L-3,1.5 M0,0 L3,-1" stroke="#f4588f" stroke-width="0.55"/>
+        <circle cx="0" cy="0" r="0.6" fill="#fff"/>
+      </g>
+
+      <g id="sakura-profile">
+        <path d="M 0,0 C -4,-6 -6,-11 -2,-14 C 1,-16 3,-11 4,-12 C 5.5,-9 4.5,-5 0,0" fill="url(#sakuraGrad)" transform="rotate(-15)"/>
+        <path d="M 0,0 C -1.5,-7 -3,-12 1.5,-15 C 4.5,-13 3.5,-9 2.5,-6 C 1.5,-4 1,-1 0,0" fill="url(#sakuraGrad)" transform="rotate(12)"/>
+        <path d="M 0,0 C 2.5,-5.5 5.5,-9 6.5,-12 C 5.5,-14 2.5,-12 1,-9 C -0.5,-7 -0.5,-3 0,0" fill="url(#sakuraGrad)" transform="rotate(40)"/>
+        <path d="M -1,-1 Q -3,-5 -5,-3 Q -3,0 -1,-1" fill="#781034"/>
+        <circle cx="0.5" cy="-3" r="0.6" fill="#fff"/>
+      </g>
+
+      <g id="sakura-bud">
+        <path d="M 0,0 C -2.5,-3.5 -3.5,-7.5 0,-10 C 3.5,-7.5 2.5,-3.5 0,0" fill="#bd265b"/>
+        <path d="M -0.8,0 C -1.5,-2.5 -1.5,-5.5 0,-7 C 1.5,-5.5 0.8,-2.5 -0.8,0" fill="#fcaec9"/>
+        <path d="M 0,0 C 0.8,2 2,4.5 1.5,6" stroke="#2d1712" stroke-width="0.75" fill="none"/>
+      </g>
+
+      <linearGradient id="rockGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#2d3744"/>
+        <stop offset="100%" stop-color="#0f141b"/>
+      </linearGradient>
+    </defs>
+
+    <circle cx="250" cy="55" r="65" fill="url(#moonGlow)"/>
+    <circle cx="250" cy="55" r="16" fill="#ffffff" opacity="0.4"/>
+
+    <g id="tree-skeleton">
+      <ellipse cx="160" cy="445" rx="100" ry="8" fill="#03070d" opacity="0.75"/>
+      <path d="M 170,445 C 162,410 144,390 147,355 C 151,315 170,285 154,250 C 146,230 134,215 125,200"
+            stroke="url(#trunkBark)" stroke-width="22" fill="none" stroke-linecap="round"/>
+      
+      <path d="M 147,355 C 120,350 95,335 75,312 C 60,290 52,270 40,250" stroke="url(#trunkBark)" stroke-width="11" fill="none" stroke-linecap="round"/>
+      <path d="M 75,312 C 64,322 50,328 36,330" stroke="url(#trunkBark)" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M 52,270 C 38,275 24,270 12,263" stroke="url(#trunkBark)" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 154,250 C 135,240 112,230 98,205 C 88,185 82,162 68,148" stroke="url(#trunkBark)" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <path d="M 98,205 C 92,188 94,173 85,158" stroke="url(#trunkBark)" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+      <path d="M 154,250 C 174,245 195,235 208,212 C 226,185 245,175 268,162" stroke="url(#trunkBark)" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M 208,212 C 218,225 232,235 250,240" stroke="url(#trunkBark)" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+      <path d="M 226,185 C 230,168 236,150 242,132" stroke="url(#trunkBark)" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+
+      <path d="M 125,200 C 118,182 115,158 108,140 C 102,122 90,108 80,95" stroke="url(#trunkBark)" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+      <path d="M 125,200 C 138,182 158,178 172,158 C 185,140 200,130 212,112" stroke="url(#trunkBark)" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <g id="all-sakura-flowers">
+      <use href="#sakura-full" transform="translate(85,98) scale(1.1) rotate(12)"/>
+      <use href="#sakura-profile" transform="translate(97,95) scale(0.9) rotate(-35)"/>
+      <use href="#sakura-full" transform="translate(112,124) scale(1.2) rotate(55)"/>
+      <use href="#sakura-profile" transform="translate(126,118) scale(1) rotate(20)"/>
+      <use href="#sakura-full" transform="translate(162,114) scale(1.2) rotate(70)"/>
+      <use href="#sakura-full" transform="translate(182,104) scale(1.2) rotate(25)"/>
+      <use href="#sakura-profile" transform="translate(198,110) scale(1.05) rotate(-60)"/>
+      <use href="#sakura-full" transform="translate(212,114) scale(1.1) rotate(115)"/>
+      <use href="#sakura-full" transform="translate(100,105) scale(1.1) rotate(45)"/>
+      <use href="#sakura-profile" transform="translate(142,105) scale(1.1) rotate(15)"/>
+      <use href="#sakura-full" transform="translate(150,125) scale(1.2) rotate(85)"/>
+      
+      <use href="#sakura-full" transform="translate(74,152) scale(1.2) rotate(185)"/>
+      <use href="#sakura-profile" transform="translate(64,158) scale(1) rotate(40)"/>
+      <use href="#sakura-full" transform="translate(84,164) scale(1.1) rotate(10)"/>
+      <use href="#sakura-profile" transform="translate(98,156) scale(1.05) rotate(-20)"/>
+      <use href="#sakura-bud" transform="translate(104,148) scale(0.9)"/>
+      <use href="#sakura-full" transform="translate(68,145) scale(1.1) rotate(20)"/>
+      <use href="#sakura-profile" transform="translate(76,170) scale(1.1) rotate(65)"/>
+
+      <use href="#sakura-full" transform="translate(52,195) scale(1.2) rotate(105)"/>
+      <use href="#sakura-profile" transform="translate(44,201) scale(1) rotate(150)"/>
+      <use href="#sakura-bud" transform="translate(60,187) scale(0.9)"/>
+      <use href="#sakura-profile" transform="translate(50,178) scale(1.05) rotate(-10)"/>
+      <use href="#sakura-full" transform="translate(60,212) scale(1.2) rotate(130)"/>
+
+      <use href="#sakura-full" transform="translate(134,170) scale(1.2) rotate(5)"/>
+      <use href="#sakura-profile" transform="translate(146,162) scale(1.05) rotate(-45)"/>
+      <use href="#sakura-full" transform="translate(164,156) scale(1.2) rotate(40)"/>
+      <use href="#sakura-profile" transform="translate(126,198) scale(1) rotate(80)"/>
+      <use href="#sakura-full" transform="translate(144,196) scale(1.2) rotate(130)"/>
+      <use href="#sakura-full" transform="translate(120,185) scale(1.15) rotate(95)"/>
+      <use href="#sakura-profile" transform="translate(154,180) scale(1.05) rotate(15)"/>
+      <use href="#sakura-full" transform="translate(138,155) scale(1.2) rotate(210)"/>
+
+      <use href="#sakura-full" transform="translate(200,156) scale(1.2) rotate(35)"/>
+      <use href="#sakura-profile" transform="translate(212,152) scale(1.1) rotate(-10)"/>
+      <use href="#sakura-full" transform="translate(226,162) scale(1.25) rotate(165)"/>
+      <use href="#sakura-profile" transform="translate(240,156) scale(1) rotate(50)"/>
+      <use href="#sakura-bud" transform="translate(244,146) scale(0.95)"/>
+      <use href="#sakura-full" transform="translate(254,162) scale(1.15) rotate(240)"/>
+      <use href="#sakura-full" transform="translate(192,170) scale(1.15) rotate(50)"/>
+      <use href="#sakura-profile" transform="translate(220,172) scale(1.05) rotate(-30)"/>
+      <use href="#sakura-full" transform="translate(242,172) scale(1.2) rotate(110)"/>
+
+      <use href="#sakura-full" transform="translate(208,216) scale(1.15) rotate(95)"/>
+      <use href="#sakura-profile" transform="translate(222,226) scale(1.05) rotate(-25)"/>
+      <use href="#sakura-full" transform="translate(236,240) scale(1.2) rotate(20)"/>
+      <use href="#sakura-profile" transform="translate(246,244) scale(1) rotate(60)"/>
+      <use href="#sakura-full" transform="translate(200,228) scale(1.1) rotate(15)"/>
+      <use href="#sakura-full" transform="translate(222,244) scale(1.15) rotate(80)"/>
+      <use href="#sakura-profile" transform="translate(234,222) scale(1) rotate(-45)"/>
+
+      <use href="#sakura-full" transform="translate(44,258) scale(1.25) rotate(290)"/>
+      <use href="#sakura-profile" transform="translate(36,264) scale(1.1) rotate(25)"/>
+      <use href="#sakura-full" transform="translate(56,272) scale(1.2) rotate(60)"/>
+      <use href="#sakura-profile" transform="translate(38,275) scale(1) rotate(90)"/>
+      <use href="#sakura-full" transform="translate(48,246) scale(1.15) rotate(15)"/>
+      
+      <use href="#sakura-full" transform="translate(74,314) scale(1.2) rotate(5)"/>
+      <use href="#sakura-profile" transform="translate(84,322) scale(1.05) rotate(105)"/>
+      <use href="#sakura-full" transform="translate(56,332) scale(1.2) rotate(220)"/>
+      <use href="#sakura-profile" transform="translate(46,338) scale(1.1) rotate(-15)"/>
+      <use href="#sakura-bud" transform="translate(38,344) scale(0.95)"/>
+      <use href="#sakura-full" transform="translate(92,328) scale(1.1) rotate(25)"/>
+      <use href="#sakura-full" transform="translate(66,334) scale(1.15) rotate(180)"/>
+      <use href="#sakura-profile" transform="translate(80,310) scale(1.1) rotate(45)"/>
+      <use href="#sakura-full" transform="translate(48,348) scale(1.05) rotate(15)"/>
+      <use href="#sakura-bud" transform="translate(62,322) scale(0.85)"/>
+    </g>
+
+    <g id="ground-base">
+      <path d="M 25,459 C 30,432 58,419 82,423 C 108,427 122,442 132,459 C 115,464 40,469 25,459 Z" fill="url(#rockGrad)"/>
+      <path d="M 40,435 Q 62,425 85,432" stroke="#485666" stroke-width="1.1" fill="none" opacity="0.4"/>
+      
+      <path d="M 124,460 C 128,446 138,440 148,443 C 158,446 164,455 166,460 C 154,463 134,463 124,460 Z" fill="url(#rockGrad)"/>
+      <path d="M 131,448 Q 140,443 150,447" stroke="#485666" stroke-width="0.8" fill="none" opacity="0.35"/>
+      
+      <path d="M 152,461 C 162,437 188,430 208,434 C 228,438 244,452 248,461 C 218,468 172,468 152,461 Z" fill="url(#rockGrad)"/>
+      <use href="#real-petal" transform="translate(68,430) scale(0.75) rotate(75)" opacity="0.75"/>
+      <use href="#real-petal" transform="translate(122,456) scale(0.65) rotate(22)" opacity="0.65"/>
+      <use href="#real-petal" transform="translate(180,444) scale(0.8) rotate(125)" opacity="0.7"/>
+    </g>
+  </svg>
+  </div>
+
+  <div class="card">
+    <h1>Cordélia</h1>
+    <div class="stanza">
+      <p>Dans le silence qui précède les grandes décisions,<br>
+      Don prénom se lève en moi comme l'aube sur les cimes,<br>
+      comme si quelque chose en moi avait trouvé sa floraison<br>
+      et t'avait choisie, toi, pour garder mes abîmes.</p>
+    </div>
+    <div class="stanza">
+      <p>Je rêve de marcher avec toi dans les rues de là-bas,<br>
+      là où les cerisiers laissent tomber leur âme en silence,<br>
+      de te regarder découvrir ce monde pas à pas,<br>
+      les yeux brillants de cette indicible évidence.</p>
+    </div>
+    <div class="stanza">
+      <p>Tu as cette douceur qui se retire parfois comme la marée,<br>
+      chaude et lumineuse, puis soudain lointaine sans raison,<br>
+      et je reste là, patient, à regarder l'horizon,<br>
+      heureux d'être celui vers qui tu te laisses ramener.</p>
+    </div>
+    <div class="stanza">
+      <p>Je ne veux pas l'éclat bref de ce qui s'effiloche,<br>
+      je veux la durée, la profondeur du vrai,<br>
+      que notre amour devienne solide comme une roche,<br>
+      taillé dans le quotidien, immuable à jamais.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
