@@ -6,18 +6,22 @@
   <title>Cordélia</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400&display=swap" rel="stylesheet"/>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       min-height: 100vh;
       background: linear-gradient(170deg, #070f18 0%, #0f1925 35%, #160f24 70%, #080510 100%);
+      background-attachment: fixed;
       font-family: 'Cormorant Garamond', Georgia, serif;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 40px 20px;
-      overflow-x: hidden;
-      -webkit-text-size-adjust: 100%;
     }
 
     .container {
@@ -55,8 +59,6 @@
       padding: 45px 40px;
       color: #f2edf7;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      transform: translate3d(0, 0, 0);
-      -webkit-transform: translate3d(0, 0, 0);
     }
 
     .card h1 {
@@ -70,10 +72,10 @@
       text-shadow: 0 0 15px rgba(251, 194, 205, 0.2);
     }
 
-    .stanza { 
-      margin-bottom: 30px; 
+    .stanza {
+      margin-bottom: 30px;
     }
-    
+
     .stanza:last-child {
       margin-bottom: 0;
     }
@@ -90,31 +92,33 @@
     @media (max-width: 768px) {
       body {
         display: block;
-        padding: 20px 12px;
+        padding: 24px 16px;
+        min-height: 100%;
+        height: auto;
+        background-attachment: scroll;
       }
 
       .container {
-        display: grid;
-        grid-template-columns: 100%;
-        gap: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
         width: 100%;
         max-width: 100%;
       }
 
       .illustration {
-        width: 100%;
-        max-width: 280px;
+        flex: none;
+        width: 240px;
         height: auto;
         aspect-ratio: 320 / 480;
-        margin: 0 auto;
       }
 
       .card {
+        flex: none;
         width: 100%;
-        max-width: 100%;
-        padding: 30px 20px;
+        padding: 28px 20px;
         border-radius: 20px;
-        margin: 0 auto;
       }
 
       .card h1 {
@@ -128,7 +132,7 @@
       }
 
       .stanza p {
-        font-size: 1.12rem;
+        font-size: 1.08rem;
         line-height: 1.8;
       }
     }
